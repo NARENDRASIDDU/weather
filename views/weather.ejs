@@ -1,0 +1,22 @@
+<!-- views/weather.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Page</title>
+</head>
+<body>
+    <h1>Welcome to the Weather Page</h1>
+    <form action="/weather" method="get">
+        <input type="text" name="city" placeholder="Enter city">
+        <button type="submit">Get Weather</button>
+    </form>
+    
+    <% if (weather) { %>
+        <h2>Weather in <%= city %></h2>
+        <p>Temperature: <%= weather.current.temp_c %>°C</p>
+        <p>Condition: <%= weather.current.condition.text %></p>
+    <% } %>
+</body>
+</html>
